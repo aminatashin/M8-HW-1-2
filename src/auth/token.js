@@ -1,11 +1,11 @@
-import { verifyToken } from "../tools";
+import { verifyToken } from "../tools.js";
 
-const tokenAuth = async (req, res, next) => {
+export const tokenAuth = async (req, res, next) => {
   if (!req.headers.authorization) {
     console.log(error);
   } else {
-    const credentials = req.headers.authorization.split(" ")[1];
-    const payload = await verifyToken(credentials);
+    const token = req.headers.authorization.split(" ")[1];
+    const payload = await verifyToken(token);
     if (payload) {
       req.user = {
         _id: payload._id,
