@@ -6,6 +6,7 @@ import mongoose from "mongoose";
 import otherRouter from "./others/other.js";
 // ================================================
 const server = express();
+server.use(express.json());
 const port = process.env.PORT || 3003;
 // ================================================
 server.use(cors());
@@ -16,5 +17,6 @@ mongoose.connection.on("connected", () => {
   console.log("Mongo is Connected");
   server.listen(port, () => {
     console.table(listEndpoints(server));
+    console.log(`${port}`);
   });
 });
