@@ -9,6 +9,7 @@ const userSchema = new Schema(
     email: { type: String },
     password: { type: String },
     role: { type: String, enum: ["user", "admin"], default: "user" },
+    googleId: { type: String },
   },
   { timeStamp: true }
 );

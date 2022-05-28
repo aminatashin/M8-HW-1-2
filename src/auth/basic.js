@@ -1,5 +1,5 @@
 import atob from "atob";
-import theModel from "../others/otherModel.js";
+import theModel from "../others/userModel.js";
 // ==========================================
 export const basicAuth = async (req, res, next) => {
   if (!req.headers.authorization) {
